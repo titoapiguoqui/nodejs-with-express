@@ -1,0 +1,32 @@
+
+<%- include('layouts/header'); -%>
+<link rel="stylesheet" type="text/css" href="css/error.css">
+<!-- end-css-&-fonts -->
+</head>
+<body>
+    <%- include('layouts/menu'); -%>
+    <!-- end-menu -->
+
+    <!-- container -->
+    <%- include('layouts/container'); -%>
+        <!-- error-page -->
+        <div id="error">
+            <h1><%= description %></h1>
+            <h2><%= data.status %></h2>
+            <pre><%= message %></pre>
+        </div>
+        <!-- end-error-page -->
+    </div>
+    <!-- end-container -->
+
+    <!-- footer -->
+    <%- include('layouts/footer'); -%>
+
+    <!-- specified-js -->
+
+    <!-- end-specified-js -->
+    <!-- end-js -->
+    <!-- end-footer -->
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<%- include('layouts/header'); -%>
+<link rel="stylesheet" type="text/css" href="css/auth.css">
+<!-- end-css-&-fonts -->
+</head>
+
+<body>
+    <!-- menu -->
+    <%- include('layouts/menu'); -%>
+
+    <!-- container -->
+    <%- include('layouts/container'); -%>
+        <!-- sign-up-page -->
+        <div class="text-center">
+            <h1>SIGN UP</h1>
+
+            <% if (message.length > 0) { %>
+            <!-- success-message -->
+            <div class="col-4 offset-4 mt-4 alert alert-danger">
+                <%= message %>
+            </div>
+            <!-- end-success-message -->
+            <% } %>
+
+            <!-- sign-up-form -->
+            <form action="/signup" method="post" class="signup_form">
+                <!-- username-input -->
+                <div class="form-label-group">
+                    <input type="text" id="signup_username" name="username" class="form-control" placeholder="Nombre de usuario" autofocus>
+                    <label for="signup_username">Nombre de usuario</label>
+                </div>
+                <!-- end-username-input -->
+
+                <!-- password-input -->
+                <div class="form-label-group">
+                    <input type="password" id="signup_password" class="form-control" name="password" placeholder="Contraseña">
+                    <label for="signup_password">Contraseña</label>
+                </div>
+                <!-- end-password-input -->
+
+                <!-- login-submit-button -->
+                <button id="signup_button" class="btn btn-lg btn-primary btn-block" type="submit">Regístrate</button>
+                <!-- end-login-submit-button -->
+            </form>
+            <!-- end-sign-up-form -->
+        </div>
+        <!-- end-sign-up-page -->
+    </div>
+    <!-- end-container -->
+
+    <!-- footer -->
+    <%- include('layouts/footer'); -%>
+
+    <!-- specified-js -->
+
+    <!-- end-specified-js -->
+    <!-- end-js -->
+    <!-- end-footer -->
+</body>
+
+</html>

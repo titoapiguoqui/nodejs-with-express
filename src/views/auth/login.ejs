@@ -1,0 +1,60 @@
+<%- include('layouts/header'); -%>
+<link rel="stylesheet" type="text/css" href="css/auth.css">
+<!-- end-css-&-fonts -->
+</head>
+
+<body>
+    <!-- menu -->
+    <%- include('layouts/menu'); -%>
+
+    <!-- container -->
+    <%- include('layouts/container'); -%>
+        <!-- login-page -->
+        <div class="text-center">
+            <h1>LOGIN</h1>
+
+            <% if (message.length > 0) { %>
+            <!-- success-message -->
+            <div class="col-4 offset-4 mt-4 alert alert-danger">
+                <%= message %>
+            </div>
+            <!-- end-success-message -->
+            <% } %>
+
+            <!-- login-form -->
+            <form action="/login" method="post" class="login_form">
+                <!-- username-input -->
+                <div class="form-label-group">
+                    <input type="text" id="login_username" name="username" class="form-control" placeholder="Nombre de usuario" autofocus>
+                    <label for="login_username">Nombre de usuario</label>
+                </div>
+                <!-- end-username-input -->
+
+                <!-- password-input -->
+                <div class="form-label-group">
+                    <input type="password" id="login_password" class="form-control" name="password" placeholder="Contraseña">
+                    <label for="login_password">Contraseña</label>
+                </div>
+                <!-- end-password-input -->
+
+                <!-- login-submit-button -->
+                <button id="login_button" class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+                <!-- end-login-submit-button -->
+            </form>
+            <!-- end-login-form -->
+        </div>
+        <!-- end-login-page -->
+    </div>
+    <!-- end-container -->
+
+    <!-- footer -->
+    <%- include('layouts/footer'); -%>
+
+    <!-- specified-js -->
+
+    <!-- end-specified-js -->
+    <!-- end-js -->
+    <!-- end-footer -->
+</body>
+
+</html>

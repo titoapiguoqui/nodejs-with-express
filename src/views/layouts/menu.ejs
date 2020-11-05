@@ -1,0 +1,51 @@
+<nav id="header_menu" class="navbar navbar-expand-md navbar-dark fixed-top">
+    <a id="header_company_logo" class="navbar-brand" href="/">
+        <img alt="nodejs" src="images/nodejs/windows/nodejs-512-w.svg">
+    </a>
+
+    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div id="navbarCollapse" class="navbar-collapse collapse">
+        <% if (user && user.role === 'admin') { %>
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item dropdown">
+                <a id="dropdown1" class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">Dropdown 1</a>
+                <div class="dropdown-menu" aria-labelledby="dropdown1">
+                    <a class="dropdown-item" href="/foo">Count view foo</a>
+                </div>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a id="dropdown2" class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">Dropdown 2</a>
+                <div class="dropdown-menu" aria-labelledby="dropdown2">
+                    <a class="dropdown-item" href="/bar">Count view bar</a>
+                </div>
+            </li>
+        </ul>
+        <% } %>
+
+        <ul class="navbar-nav ml-auto">
+            <% if (!user) { %>
+            <li class="nav-item">
+                <a id="login" class="nav-link" href="/login">Login</a>
+            </li>
+
+            <li class="nav-item">
+                <a id="sign_up" class="nav-link" href="/signup">Sign up</a>
+            </li>
+            <% } else { %>
+            <span id="header_user"><%= user.username %></span>
+
+            <li class="nav-item">
+                <a id="logout" class="nav-link" href="/logout">Logout</a>
+            </li>
+            <% } %>
+        </ul>
+    </div>
+</nav>
+<!-- end-menu -->
